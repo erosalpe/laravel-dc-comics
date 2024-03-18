@@ -2,7 +2,6 @@
 
 @section('title', 'Comic | Show')
 
-
 @section('main')
     <h2>Singolo Comic</h2>
     <div class="card" style="width: 18rem;">

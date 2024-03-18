@@ -2,13 +2,18 @@
 
 @section('title', 'Comics | Index')
 
+@vite('resources/js/app.js')
 
 @section('main')
     <h1>Index Comics</h1>
 
+    <a class="btn btn-primary" href="{{ route('comics.create')}}">
+        Crea Comics
+    </a>
+
     <table>
     <thead>
-        <tr>
+        <tr><th>Actions</th>
             <th>ID</th>
             <th>Title</th>
             <th>description</th>
@@ -22,6 +27,14 @@
     <tbody>
         @foreach($comics as $item)
             <tr>
+                <td>
+                    <button class="btn btn-success">
+                        Modifica
+                    </button>
+                    <button class="btn btn-danger">
+                        Cancella
+                    </button>
+                </td>
                 <td>{{$item['id']}}</td>
                 <td>
                     <a href="{{ route('comics.show', ['comic' => $item ['id'] ] ) }}">
@@ -37,8 +50,6 @@
          @endforeach
     </tbody>
     </table>
-
-    {{dd($comics)}}
 @endsection
 
 

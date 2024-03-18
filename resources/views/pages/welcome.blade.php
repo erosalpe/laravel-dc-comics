@@ -9,8 +9,8 @@
 @endsection
 
 @section('main')
-    <h1>Ciao</h1>
-    {{dd($comics)}}
+    <h1 class="text-primary">Laravel DC Comics</h1>
+    <a href="comics" class="btn btn-warning">comics</a>
 @endsection
 
 
