@@ -10,6 +10,7 @@
 
 @section('main')
     <h1>Ciao</h1>
+    {{dd($comics)}}
 @endsection
 
 
