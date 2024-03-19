@@ -28,12 +28,22 @@
         @foreach($comics as $item)
             <tr>
                 <td>
-                    <button class="btn btn-success">
-                        Modifica
-                    </button>
-                    <button class="btn btn-danger">
-                        Cancella
-                    </button>
+                    <a href="{{ route ( 'comics.edit', $item->id )}}">
+                        @csrf
+                        <button class="btn btn-success" type="submit">
+                            Modifica
+                        </button>
+                    </a>
+
+                    <form action="{{ route ( 'comics.destroy', $item->id )}}" method="POST">
+
+                        @csrf
+                        @method('DELETE')
+
+                        <button class="btn btn-danger" type="submit">
+                            Cancella
+                        </button>
+                    </form>
                 </td>
                 <td>{{$item['id']}}</td>
                 <td>

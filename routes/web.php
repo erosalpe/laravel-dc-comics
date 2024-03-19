@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\ComicController;
 use App\Http\Controllers\Guest\PageController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes

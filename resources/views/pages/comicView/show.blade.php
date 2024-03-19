@@ -4,6 +4,7 @@
 
 @section('main')
     <h2>Singolo Comic</h2>
+    <a href="../comics" class="btn btn-warning">Indietro</a>
     <div class="card" style="width: 18rem;">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">{{$comic->title}}</li>
