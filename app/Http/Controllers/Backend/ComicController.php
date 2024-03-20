@@ -30,6 +30,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required',
+            'sale_date' => 'required',
+            'type' => 'required',
+        ]);
+
         $formData = $request->all();
 
         $newComic = new Comic();
@@ -59,7 +69,7 @@ class ComicController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
+    {   
         $comic = Comic::findOrFail($id);
         return view('pages.comicView.edit', compact('comic'));
     }
@@ -69,6 +79,16 @@ class ComicController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'thumb' => 'required',
+            'price' => 'required',
+            'series' => 'required',
+            'sale_date' => 'required',
+            'type' => 'required',
+        ]);
+
         $formData = $request->all();
         $comic = Comic::find($id);
         $comic->update($formData);
